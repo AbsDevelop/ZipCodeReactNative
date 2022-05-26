@@ -15,7 +15,10 @@ export default function App() {
 return (
 	<View style={styles.container}>
     	<Text style={styles.title}>
-        	Código de Endereçamento Postal
+        	Código de Endereçamento
+      	</Text>
+		<Text style={styles.title2}>
+        	Postal
       	</Text>
 
       	<Image style={styles.img}
@@ -25,11 +28,12 @@ return (
       	<Text style={styles.textBlock}>Informe seu CEP: </Text>
       	<TextInput style={styles.input}
         	placeholder="Ex.: 11750-000"
+			onChangeText={(data)=>setInputCep(data)}
       	/>
 	  
-		<TouchableOpacity style={styles.btn}
+		<TouchableOpacity 
+			style={styles.btn}
  	    	onPress={carregaCep}	
-			onChangeText={(data)=>setInputCep(data)}
 		>
 			<Text style={styles.textbtn}>Buscar</Text>
 		</TouchableOpacity>	
@@ -49,11 +53,19 @@ const styles = StyleSheet.create({
   },
   title: {
     color: 'black',
-    fontSize: 24,
+    fontSize: 30,
+    justifyContent: 'center',
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+	marginTop: 60
+  },
+  title2: {
+    color: 'black',
+    fontSize: 30,
     justifyContent: 'center',
     fontStyle: 'italic',
     fontWeight: 'bold'
-  },
+  },	
   img: {
     width: 250,
     height: 250,
